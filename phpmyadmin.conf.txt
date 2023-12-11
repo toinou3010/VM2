@@ -1,0 +1,14 @@
+Listen 8080
+<VirtualHost *:8080>
+    Alias /phpmyadmin /var/www/phpmyadmin
+
+    ErrorLog /var/log/httpd/phpmyadmin/error.log
+    CustomLog /var/log/httpd/phpmyadmin/access.log combined
+
+    <Directory "/var/www/phpmyadmin">
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+</VirtualHost>
